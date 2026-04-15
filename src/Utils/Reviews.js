@@ -1,38 +1,38 @@
 const Reviews = [
   {
     id: 1,
-    name: "Aldi Ramdani",
-    bio: "Mobile Developer",
+    name: "Rohit Bansal",
+    bio: "Director, Kidzee Uttam Nagar",
     img: "https://i.ibb.co/3M64m0f/aldi.jpg",
     description:
-      "I am very impressed to work with him. He is a very good and skilled person. I want to work with him again.",
+      "He created a beautiful and responsive website for our preschool. We are very happy with the final result.",
     rating: 5.0,
   },
   {
     id: 2,
-    name: "Ilham Wahyu Budiaji",
-    bio: "Front-end Developer",
+    name: "Amit Jain",
+    bio: "Owner, Mouldspex Engineering",
     img: "https://i.ibb.co/dKYnQM8/ilham.jpg",
     description:
-      "He is my partner. We work together. When I fall into an error or any other problem he support me always.",
+      "Our company website was completed on time and exactly as we wanted. Great design and support.",
     rating: 5.0,
   },
   {
     id: 3,
-    name: "Dadang Darsono",
-    bio: "CEO MSN Production",
+    name: "Neha Kapoor",
+    bio: "Founder, Bright Future Academy",
     img: "https://i.ibb.co/yPSV6Fv/dadang.jpg",
     description:
-      "I was give him to make an webpage. He made me an awesome website. I recommend himself and wanna work with him again.",
+      "He understood our requirements very well and delivered a professional website for our institute.",
     rating: 5.0,
   },
   {
     id: 4,
-    name: "Raden Amal Prayogo",
-    bio: "Full Stack Developer",
+    name: "Vikas Arora",
+    bio: "Owner, Delhi Advertising Hub",
     img: "https://i.ibb.co/chG1v0f/Amal.jpg",
     description:
-      "I was finding someone to help me to build my Grocery website for my store. He made me an E-commerce Store. I am satisfied with his work.",
+      "Very professional and easy to work with. The website design and performance both are excellent.",
     rating: 5.0,
   },
 ];

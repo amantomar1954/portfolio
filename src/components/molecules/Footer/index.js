@@ -11,17 +11,17 @@ const Footer = () => {
         style={{ backgroundColor: "#313131" }}
       >
         <div className="flex items-center justify-center mb-6">
-          <a
+          {/* <a
             className="inline-block mx-2"
             href="https://twitter.com/GilbertHutapeaa"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FaTwitter className="text-2xl text-blue-600" />
-          </a>
+          </a> */}
           <a
             className="inline-block mx-2"
-            href="https://linkedin.com/in/gilberthutapea"
+            href="https://linkedin.com/in/aman-tomar-702b04265"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -29,7 +29,7 @@ const Footer = () => {
           </a>
           <a
             className="inline-block mx-2"
-            href="https://www.github.com/berthutapea"
+            href="https://www.github.com/amantomar1954"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -37,7 +37,7 @@ const Footer = () => {
           </a>
           <a
             className="inline-block mx-2"
-            href="https://www.instagram.com/bethup97/"
+            href="https://www.instagram.com/amantomar9092/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -47,7 +47,7 @@ const Footer = () => {
         <div className="hidden  md:flex items-center justify-center mb-6 flex-wrap">
           <a
             className="text-xl inline-bloc mx-6 text-neutral"
-            href="https://www.fiverr.com/berthutapea"
+            href="https://www.fiverr.com/aman__tomar/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -55,7 +55,7 @@ const Footer = () => {
           </a>
           <a
             className="text-xl inline-bloc mx-6 text-neutral"
-            href="https://www.upwork.com/freelancers/~0171c0d54d5dea86ec"
+            href="https://www.upwork.com/freelancers/~015edf8e5943d0b75d"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -63,13 +63,13 @@ const Footer = () => {
           </a>
           <a
             className="text-xl inline-bloc mx-6 text-neutral"
-            href="http://freelancer.com/u/berthutapea"
+            href="https://www.freelancer.in/u/amantomar1954"
             target="_blank"
             rel="noopener noreferrer"
           >
             Freelancer
           </a>
-          <a
+          {/* <a
             className="text-xl inline-bloc mx-6 text-neutral"
             href="https://themeforest.net/user/berthutapea"
             target="_blank"
@@ -84,15 +84,15 @@ const Footer = () => {
             rel="noopener noreferrer"
           >
             RemoteHub
-          </a>
-          <a
+          </a> */}
+          {/* <a
             className="text-xl inline-bloc mx-6 text-neutral"
             href="https://dribbble.com/berthutapea"
             target="_blank"
             rel="noopener noreferrer"
           >
             Dribbble
-          </a>
+          </a> */}
           <a
             className="text-xl inline-bloc mx-6 text-neutral"
             href="https://drive.google.com/file/d/19rnbukAhf9oPhadMhsvI3xnWF6FIYeMT/view?usp=share_link"

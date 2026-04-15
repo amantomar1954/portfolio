@@ -1,46 +1,96 @@
 import React, { useEffect, useState } from "react";
-import Items from "../../Utils/Items";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Link, useLocation } from "react-router-dom";
-import { FiArrowRight } from "react-icons/fi";
+import { useLocation } from "react-router-dom";
 import "./Project.css";
 import {
   headingAnimation,
   sectionBodyAnimation,
 } from "../../hooks/useAnimation";
-import {BottomLine} from "../../components";
+import { BottomLine } from "../../components";
+
+// ✅ Import Images
+import project1 from "../../assets/mouldspex.png";
+import project2 from "../../assets/movies.png";
+import project3 from "../../assets/nivesh-reelestate.png";
+import project4 from "../../assets/punjabi-jutti.png";
+import project5 from "../../assets/reeltor-cms.png";
+import project6 from "../../assets/reeltor.png";
+import project7 from "../../assets/kidzeeschool.png";
 
 const Project = () => {
-  const [items, setItems] = useState(Items);
-  const [activeBtn, setActiveBtn] = useState("all");
+
+  // ✅ Your Projects Data
+  const Items = [
+    {
+      id: 1,
+      title: "Spex Moulds Website",
+      image: project1,
+      liveLink: "https://spexmould.vercel.app/",
+      codeLink: "https://github.com/amantomar1954/mouldspex",
+    },
+    {
+      id: 2,
+      title: "Movies App (React)",
+      image: project2,
+      liveLink: "https://movies-brown-eta.vercel.app/",
+      codeLink: "https://github.com/amantomar1954/movies",
+    },
+    {
+      id: 3,
+      title: "Nivesh Real Estate",
+      image: project3,
+      liveLink: "https://niveshsharthi.vercel.app/",
+      codeLink: "https://github.com/amantomar1954/niveshsharthi",
+    },
+    {
+      id: 4,
+      title: "Kidzee PreSchool Home Page Website",
+      image: project7,
+      liveLink: "https://kidzee-five.vercel.app/",
+      codeLink: "https://github.com/amantomar1954/kidzee",
+    },
+    {
+      id: 5,
+      title: "Punjabi Jutti Store",
+      image: project4,
+      liveLink: "https://punjabijuttis.vercel.app/",
+      codeLink: "https://github.com/amantomar1954/punjabijuttis",
+    },
+    {
+      id: 6,
+      title: "Reeltor CMS",
+      image: project5,
+      liveLink: "https://reeltor-cms.vercel.app/",
+      codeLink: "https://github.com/amantomar1954/cmsofreeltor",
+    },
+    // {
+    //   id: 7,
+    //   title: "Reeltor Main Website",
+    //   image: project6,
+    //   liveLink: "https://www.reeltor.com/",
+    //   codeLink: "https://github.com/your-repo",
+    // },
+  ];
+
+  const [items, setItems] = useState([]);
   const location = useLocation();
   const [ref, inView] = useInView();
   const [viewDiv, setViewDiv] = useState(false);
-  const animation = useAnimation();
 
   useEffect(() => {
-    if (inView) {
-      setViewDiv(true);
-    } else {
-      setViewDiv(false);
-    }
-    if (location.pathname === "/" && items.length > 3) {
-      setItems(items.slice(0, 3));
-    }
-  }, [inView, animation, location, items]);
+    if (inView) setViewDiv(true);
+    else setViewDiv(false);
 
-  const filterItem = (category) => {
-    const filtered = Items.filter((item) => item.category === category);
-    setItems(filtered);
-    if (filtered.length > 3 && location.pathname === "/") {
-      setItems(filtered.slice(0, 3));
-    }
-  };
+    // ✅ Show all projects
+    setItems(Items);
+  }, [inView]);
 
   return (
     <div className={`${location.pathname !== "/" && "pt-16"}`}>
       <div className="parent py-12">
+
+        {/* ✅ Heading */}
         <motion.div
           initial="hidden"
           animate={viewDiv && "visible"}
@@ -57,112 +107,57 @@ const Project = () => {
           </div>
         </motion.div>
 
+        {/* ✅ Cards Section */}
         <motion.div
           ref={ref}
           initial="hidden"
           animate={viewDiv && "visible"}
           variants={sectionBodyAnimation}
         >
-          <div className="mt-6 mb-2 flex items-center justify-center flex-wrap">
-            <button
-              className={`btn btn-sm bg-primary border-2 border-primary text-white hover:bg-transparent hover:border-primary duration-300 mx-3 my-3 sm:my-0 ${activeBtn === "all" && "active-btn"
-                }`}
-              onClick={() => {
-                setActiveBtn("all");
-                location.pathname === "/"
-                  ? setItems(Items.slice(0, 3))
-                  : setItems(Items);
-              }}
-            >
-              All
-            </button>
-            <button
-              className={`btn btn-sm bg-primary border-2 border-primary text-white hover:bg-transparent hover:border-primary duration-300 mx-3 my-3 sm:my-0 ${activeBtn === "business" && "active-btn"
-                }`}
-              onClick={() => {
-                setActiveBtn("business");
-                filterItem("business");
-              }}
-            >
-              Business
-            </button>
-            <button
-              className={`btn btn-sm bg-primary border-2 border-primary text-white hover:bg-transparent hover:border-primary duration-300 mx-3 my-3 sm:my-0 ${activeBtn === "personal" && "active-btn"
-                }`}
-              onClick={() => {
-                setActiveBtn("personal");
-                filterItem("personal");
-              }}
-            >
-              Personal
-            </button>
-            <button
-            className={`btn btn-sm bg-primary border-2 border-primary text-white hover:bg-transparent hover:border-primary duration-300 mx-3 my-3 sm:my-0 ${
-              activeBtn === "game" && "active-btn"
-            }`}
-            onClick={() => {
-              setActiveBtn("game");
-              filterItem("game");
-            }}
-          >
-            Game
-          </button>
-          </div>
-
-          {/* Items Card */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="three-card-grid">
             {items.map((item) => (
-              <motion.div
-                initial={{ x: 200, opacity: 0, scale: 0 }}
-                animate={{
-                  x: 0,
-                  scale: 1,
-                  opacity: 1,
-                  transition: { duration: 0.3 },
-                }}
+              <div
                 key={item.id}
-                className="item-container rounded-lg shadow-lg p-3 flex flex-col justify-between hover:shadow-primary duration-500"
-                style={{ backgroundColor: "#313131" }}
+                className="project-card"
+                style={{
+                  backgroundImage: `url(${item.image})`, // ✅ FIXED HERE
+                }}
               >
-                <div className="item h-full">
-                  <img
-                    className="rounded-lg h-full w-full"
-                    src={item.mainImage}
-                    alt={item.title || "Item Image"}
-                  />
-                  <div className="overlay">
-                    <h3 className="text-2xl text-primary font-semibold">
-                      {item.title}
-                    </h3>
-                    <Link
-                      to={`/project/${item.id}`}
-                      className="mt-3 inline-block"
+                <div className="card-overlay">
+                  <h3 className="text-lg font-semibold text-primary text-center">
+                    {item.title}
+                  </h3>
+
+                  <div className="flex gap-2 mt-3">
+
+                    {/* ✅ View Live */}
+                    <a
+                      href={item.liveLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
-                      <button className="btn btn-sm border-2 border-transparent bg-primary hover:bg-transparent text-white hover:border-primary duration-500">
-                        See Details
+                      <button className="btn btn-sm bg-primary text-white hover:bg-transparent hover:border-primary border-2 duration-300">
+                        View
                       </button>
-                    </Link>
+                    </a>
+
+                    {/* ✅ Source Code */}
+                    <a
+                      href={item.codeLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <button className="btn btn-sm border-2 border-primary text-white hover:bg-primary duration-300">
+                        Code
+                      </button>
+                    </a>
+
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </motion.div>
-        {location.pathname === "/" && (
-          <div className="mt-4 text-right">
-            <Link
-              to="/project"
-              className="text-2xl hover:text-primary duration-300"
-            >
-              <button className="primary-button">
-                <span>See All</span>
-                <span>
-                  <FiArrowRight />
-                </span>
-              </button>
-            </Link>
-          </div>
-        )}
       </div>
     </div>
   );

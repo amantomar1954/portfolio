@@ -1,7 +1,7 @@
 const Items = [
   {
     id: 1,
-    mainImage: "https://res.cloudinary.com/du541igfh/image/upload/v1682699543/Blog%20Portfolio%20Gilbert/Project/msnproduction/img-1_rmh7lp.png",
+    mainImage: "../../../",
     img: [
       "https://res.cloudinary.com/du541igfh/image/upload/v1682699543/Blog%20Portfolio%20Gilbert/Project/msnproduction/img-1_rmh7lp.png",
       "https://res.cloudinary.com/du541igfh/image/upload/v1682699548/Blog%20Portfolio%20Gilbert/Project/msnproduction/img-2_p3chy5.png",

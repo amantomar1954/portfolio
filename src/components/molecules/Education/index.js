@@ -65,7 +65,7 @@ const Education = () => {
                 Full Stack Developer
               </h3>
               <p className="text-sm text-neutral font-semibold">
-                1.5 Years Experience
+                2 Years Experience
               </p>
             </div>
             <p className="text-sm text-neutral text-justify">

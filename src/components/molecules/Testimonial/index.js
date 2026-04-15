@@ -88,11 +88,11 @@ const Testimonial = () => {
                     <h2 className="font-medium leading-none">{review.name}</h2>
                     <p className="text-xs leading-none">{review.bio}</p>
                   </div>
-                  <img
+                  {/* <img
                     src={review.img}
                     alt="client"
                     className="inline-block w-16 h-16 -mt-10 bg-white rounded-full"
-                  />
+                  /> */}
                 </div>
               </div>
             </div>
